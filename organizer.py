@@ -11,9 +11,9 @@ def main() -> None:
     # Ask the user which folder to organize
     path: str = input("Enter the path of the folder to organize: ")
 
-    # Validate that the folder exists
-    if not os.path.exists(path):
-        print(f"Error: the path '{path}' does not exist.")
+    # Validate that the path is an existing directory
+    if not os.path.isdir(path):
+        print(f"Error: '{path}' is not a directory or does not exist.")
         sys.exit(1)
 
     # Map category names to their file extensions
